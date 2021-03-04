@@ -7,19 +7,19 @@
 
 <script lang="ts">
 export default {
-  name: "my-button",
+  name: 'my-button',
 
   methods: {
     onClick() {
       /**
        * Click event
        *
-       * @event click
+      //  * @event click
        */
-      this.$emit("click");
+      // this.$emit("click");
     }
   }
-};
+}
 </script>
 
 <style scoped>

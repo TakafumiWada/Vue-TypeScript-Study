@@ -1,11 +1,30 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
+import {
+  Getters,
+  Mutations,
+  Actions,
+  Module,
+  createStore
+} from 'vuex-smart-module'
+import { TodosProps } from '@/interface/Todos'
 
-Vue.use(Vuex);
+class SampleState implements TodosProps {
+  todos = [
+    {
+      title: 'test',
+      isdone: false
+    },
+    {
+      title: 'test2',
+      isdone: false
+    }
+  ]
+}
 
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
-});
+const Sample = new Module({
+  state: SampleState
+})
+
+Vue.use(Vuex)
+export const store = createStore(Sample)
